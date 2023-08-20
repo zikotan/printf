@@ -2,8 +2,8 @@
 
 /**
  * pr_buf - it prints the buffer contents if it exist
- * @buf: Array of chars
- * @buf_i: Index at which to add next char, represents the length.
+ * @buf: the chars array
+ * @buf_i: the index where to add next char, it represents the length.
  */
 void pr_buf(char buf[], int *buf_i)
 {
@@ -14,50 +14,48 @@ void pr_buf(char buf[], int *buf_i)
 }
 
 /**
- * _printf - the printf function
- * @format: the format
- * Return: chars
+ * _printf - Printf function
+ * @format: format
+ * Return: the printed chars
  */
 int _printf(const char *format, ...)
 {
-	int i, p = 0, s = 0;
-	int fl, w, prec, sz, bf_i = 0;
+	int i, pr = 0, pr_ch = 0;
+	int fl, wd, prec, size, buf_i = 0;
 	va_list list;
-	char buf[BUF_SZ];
+	char buf[BUF_SIZE];
 
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
-
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
 		{
-			buf[bf_i++] = format[i];
-			if (bf_i == BUF_SZ)
-				pr_buf(buf, &bf_i);
-			s++;
+			buf[buf_i++] = format[i];
+			if (buf_i == BUF_SIZE)
+				pr_buf(buf, &buf_i);
+			/* write(1, &format[i], 1);*/
+			pr_ch++;
 		}
 		else
 		{
-			pr_buf(buf, &bf_i);
+			pr_buf(buf, &buf_i);
 			fl = get_fl(format, &i);
-			w = get_w(format, &i, list);
+			wd = get_wid(format, &i, list);
 			prec = get_prec(format, &i, list);
-			sz = get_sz(format, &i);
+			size = get_size(format, &i);
 			++i;
-			p = handling(format, &i, list, buf,
-				fl, w, prec, sz);
-			if (p == -1)
+			pr = handle_pr(format, &i, list, buf,
+				fl, wd, prec, size);
+			if (pr == -1)
 				return (-1);
-			s += p;
+			pr_ch += pr;
 		}
 	}
-
-	pr_buf(buf, &bf_i);
-
+	pr_buf(buf, &buf_i);
 	va_end(list);
 
-	return (s);
+	return (pr_ch);
 }
+
