@@ -102,7 +102,7 @@ int wr_num(int ind, char bff[], int fl, int wid, int prec,
 int wr_pointer(char buf[], int ind, int length,
 	int wid, int fl, char padd, char extra_c, int padd_start);
 
-int wr_unsignd(int is_negative, int ind,
+int wr_unsigned(int is_negative, int ind,
 char buf[],
 	int fl, int wid, int prec, int size);
 
@@ -111,6 +111,6 @@ int is_printable(char);
 int append_hexa_code(char, char[], int);
 
 long int convert_size_number(long int num, int size);
-long int convert_size_unsgnd(unsigned long int num, int size);
+long int convert_size_unsigned(unsigned long int num, int size);
 
 #endif
