@@ -24,6 +24,7 @@ int is_printable(char c)
 int append_hexa_code(char asc_code, char buf[], int i)
 {
 	char map_to[] = "0123456789ABCDEF";
+
 	if (asc_code < 0)
 		asc_code *= -1;
 
@@ -60,7 +61,7 @@ long int convert_size_number(long int n, int size)
  *
  * Return: it returns the casted value of n
  */
-long int convert_size_unsigned(unsigned long int n, int size)
+long int convert_size_unsignedd(unsigned long int n, int size)
 {
 	if (size == LONG)
 		return (n);

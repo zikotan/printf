@@ -17,19 +17,22 @@ int pr_unsigned(va_list types, char buf[],
 	int i = BUF_SIZE - 2;
 	unsigned long int num = va_arg(types, unsigned long int);
 
-	num = convert_size_unsigned(num, size);
+	num = convert_size_unsignedd(num, size);
+
 	if (num == 0)
 		buf[i--] = '0';
 
 	buf[BUF_SIZE - 1] = '\0';
+
 	while (num > 0)
 	{
 		buf[i--] = (num % 10) + '0';
 		num /= 10;
 	}
+
 	i++;
 
-	return (wr_unsigned(0, i, buf, fl, wid, prec, size));
+	return (wr_unsignedd(0, i, buf, fl, wid, prec, size));
 }
 
 /************* PRINT UNSIGNED NUMBER IN OCTAL  ****************/
@@ -53,7 +56,7 @@ int pr_octal(va_list types, char buf[],
 
 	UNUSED(wid);
 
-	num = convert_size_unsigned(num, size);
+	num = convert_size_unsignedd(num, size);
 
 	if (num == 0)
 		buf[i--] = '0';
@@ -71,7 +74,7 @@ int pr_octal(va_list types, char buf[],
 
 	i++;
 
-	return (wr_unsigned(0, i, buf, fl, wid, prec, size));
+	return (wr_unsignedd(0, i, buf, fl, wid, prec, size));
 }
 
 /************** PRINT UNSIGNED NUMBER IN HEXADECIMAL **************/
@@ -132,25 +135,21 @@ int pr_hexa(va_list types, char map_to[], char buf[],
 	unsigned long int init_num = num;
 
 	UNUSED(wid);
-	num = convert_size_unsigned(num, size);
+	num = convert_size_unsignedd(num, size);
 	if (num == 0)
 		buf[i--] = '0';
 	buf[BUF_SIZE - 1] = '\0';
-
 	while (num > 0)
 	{
 		buf[i--] = map_to[num % 16];
 		num /= 16;
 	}
-
 	if (fl & HASH && init_num != 0)
 	{
 		buf[i--] = fl_ch;
 		buf[i--] = '0';
 	}
-
 	i++;
 
-	return (wr_unsigned(0, i, buf, fl, wid, prec, size));
+	return (wr_unsignedd(0, i, buf, fl, wid, prec, size));
 }
-

@@ -138,7 +138,7 @@ int wr_num(int ind, char buf[],
 }
 
 /**
- * wr_unsigned - it writes an unsigned number
+ * wr_unsignedd - it writes an unsigned number
  * @is_negative: the number indicating if the num is negative
  * @ind: the index at which the number starts in the buffer
  * @buf: the array of chars
@@ -149,7 +149,7 @@ int wr_num(int ind, char buf[],
  *
  * Return: the number of written chars.
  */
-int wr_unsigned(int is_negative, int ind,
+int wr_unsignedd(int is_negative, int ind,
 	char buf[],
 	int fl, int wid, int prec, int size)
 {

@@ -22,7 +22,7 @@
 /**
  * struct s_format - Struct op
  *
- * @s_format: The format.
+ * @format: The format.
  * @fass: The function associated.
  */
 struct s_format
@@ -102,7 +102,7 @@ int wr_num(int ind, char bff[], int fl, int wid, int prec,
 int wr_pointer(char buf[], int ind, int length,
 	int wid, int fl, char padd, char extra_c, int padd_start);
 
-int wr_unsigned(int is_negative, int ind,
+int wr_unsignedd(int is_negative, int ind,
 char buf[],
 	int fl, int wid, int prec, int size);
 
@@ -111,6 +111,6 @@ int is_printable(char);
 int append_hexa_code(char, char[], int);
 
 long int convert_size_number(long int num, int size);
-long int convert_size_unsigned(unsigned long int num, int size);
+long int convert_size_unsignedd(unsigned long int num, int size);
 
 #endif

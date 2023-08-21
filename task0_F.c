@@ -31,7 +31,7 @@ int get_fl(const char *format, int *i)
 
 /**
  * get_prec - it calculates the precision
- * @format: the formatted string 
+ * @format: the formatted string
  * @i: the list of arguments to be printed
  * @list: list of arguments
  *
