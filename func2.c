@@ -137,8 +137,7 @@ int pr_reverse(va_list types, char buf[],
 }
 /************************* PRINT A STRING IN ROT13 *************************/
 /**
- * pr_RotStr:wq
-  - it print a string in rot13.
+ * pr_RotStr: - it prints a string in rot13.
  * @types: the list of arguments
  * @buf: the buffer array to handle print
  * @fl:  it calculates active flags
