@@ -81,7 +81,7 @@ int wr_number(int is_negative, int ind, char buf[],
 /**
  * wr_num - it writes a number using a bufffer
  * @ind: Index at which the number starts on the buf
- * @buffer: the buffer
+ * @buf: the buffer
  * @fl: the flags
  * @wid: the width
  * @prec: the precision specifier
