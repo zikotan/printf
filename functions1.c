@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_unsigned - Prints an unsigned number
+ * print_unsigned - prints an unsigned number
  * @types: the list a of arguments
  * @buf: the buf array to handle print
  * @flg: it calculates active flags
@@ -35,7 +35,7 @@ int print_unsigned(va_list types, char buf[],
 }
 
 /**
- * print_octal - Prints an unsigned number in octal notation
+ * print_octal - prints an unsigned number in octal
  * @types: the lista of arguments
  * @buf: the buf array to handle print
  * @flg: it calculates active flags
@@ -76,7 +76,7 @@ int print_octal(va_list types, char buf[],
 }
 
 /**
- * print_hexadecimal - Prints an unsigned number in hexadecimal notation
+ * print_hexadecimal - prints an unsigned number in hexadecimal
  * @types: the lista of arguments
  * @buf: the buf array to handle print
  * @flg: it calculates active flags
@@ -93,7 +93,7 @@ int print_hexadecimal(va_list types, char buf[],
 }
 
 /**
- * print_hexa_upper - Prints an unsigned number in upper hexadecimal notation
+ * print_hexa_upper - prints an unsigned number in upper hexadecimal
  * @types: the lista of arguments
  * @buf: the buf array to handle print
  * @flg: it calculates active flags
@@ -110,7 +110,7 @@ int print_hexa_upper(va_list types, char buf[],
 }
 
 /**
- * print_hexa - Prints a hexadecimal number in lower or upper
+ * print_hexa - prints a hexadecimal number in lower or upper
  * @types: the lista of arguments
  * @map_to: the array of values to map the number to
  * @buf: the buf array to handle print
