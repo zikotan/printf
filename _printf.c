@@ -1,6 +1,6 @@
 #include "main.h"
 
-void pr_buf(char buf[], int *buf_i)
+void pr_buf(char buf[], int *buf_i);
 
 /**
  * _printf - Printf function
