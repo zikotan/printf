@@ -33,7 +33,7 @@ int get_fl(const char *format, int *i)
  * get_prec - it calculates the precision
  * @format: the formatted string
  * @i: the list of arguments to be printed
- * @list: list of arguments
+ * @list: the list of arguments
  *
  * Return: the precision
  */
@@ -130,11 +130,11 @@ int get_size(const char *format, int *i)
  * @format: the formatted string
  * @list: the list of arguments to be printed
  * @index: the index
- * @buf: Buffer array to handle print
- * @fl: Calculates active flags
- * @wid: get width.
- * @prec: Precision specification
- * @size: Size specifier
+ * @buf: the buffer array to handle print
+ * @fl: it calculates active flags
+ * @wid: the width
+ * @prec: the precision specification
+ * @size: the size specifier
  * Return: 1 or 2
  */
 int handle_pr(const char *format, int *index, va_list list, char buf[],

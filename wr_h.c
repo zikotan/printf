@@ -1,6 +1,5 @@
 #include "main.h"
 
-/************************* WRITE HANDLE *************************/
 /**
  * handle_wr_char - it prints a string
  * @c: the char types.
@@ -44,7 +43,6 @@ int handle_wr_char(char c, char buf[],
 	return (write(1, &buf[0], 1));
 }
 
-/************************* WRITE NUMBER *************************/
 /**
  * wr_number - it prints a string
  * @is_negative: Lista of arguments
@@ -98,9 +96,9 @@ int wr_num(int ind, char buf[],
 	int i, padd_start = 1;
 
 	if (prec == 0 && ind == BUF_SIZE - 2 && buf[ind] == '0' && wid == 0)
-		return (0); /* printf(".0d", 0)  no char is printed */
+		return (0);
 	if (prec == 0 && ind == BUF_SIZE - 2 && buf[ind] == '0')
-		buf[ind] = padd = ' '; /* wid is displayed with padding ' ' */
+		buf[ind] = padd = ' ';
 	if (prec > 0 && prec < l)
 		padd = ' ';
 	while (prec > l)
@@ -112,19 +110,19 @@ int wr_num(int ind, char buf[],
 		for (i = 1; i < wid - l + 1; i++)
 			buf[i] = padd;
 		buf[i] = '\0';
-		if (fl & MIN && padd == ' ')/* Asign extra char to left of buf */
+		if (fl & MIN && padd == ' ')
 		{
 			if (plus_c)
 				buf[--ind] = plus_c;
 			return (write(1, &buf[ind], l) + write(1, &buf[1], i - 1));
 		}
-		else if (!(fl & MIN) && padd == ' ')/* extra char to left of buff */
+		else if (!(fl & MIN) && padd == ' ')
 		{
 			if (plus_c)
 				buf[--ind] = plus_c;
 			return (write(1, &buf[1], i - 1) + write(1, &buf[ind], l));
 		}
-		else if (!(fl & MIN) && padd == '0')/* extra char to left of padd */
+		else if (!(fl & MIN) && padd == '0')
 		{
 			if (plus_c)
 				buf[--padd_start] = plus_c;
@@ -160,7 +158,7 @@ int wr_unsignedd(int is_negative, int ind,
 	UNUSED(size);
 
 	if (prec == 0 && ind == BUF_SIZE - 2 && buf[ind] == '0')
-		return (0); /* printf(".0d", 0)  no char is printed */
+		return (0);
 
 	if (prec > 0 && prec < l)
 		padd = ' ';
@@ -181,11 +179,11 @@ int wr_unsignedd(int is_negative, int ind,
 
 		buf[i] = '\0';
 
-		if (fl & MIN) /* Asign extra char to left of buf [buf>padd]*/
+		if (fl & MIN)
 		{
 			return (write(1, &buf[ind], l) + write(1, &buf[0], i));
 		}
-		else /* Asign extra char to left of padding [padd>buf]*/
+		else
 		{
 			return (write(1, &buf[0], i) + write(1, &buf[ind], l));
 		}
@@ -217,7 +215,7 @@ int wr_pointer(char buf[], int ind, int l,
 		for (i = 3; i < wid - l + 3; i++)
 			buf[i] = padd;
 		buf[i] = '\0';
-		if (fl & MIN && padd == ' ')/* Asign extra char to left of buf */
+		if (fl & MIN && padd == ' ')
 		{
 			buf[--ind] = 'x';
 			buf[--ind] = '0';
@@ -225,7 +223,7 @@ int wr_pointer(char buf[], int ind, int l,
 				buf[--ind] = plus_c;
 			return (write(1, &buf[ind], l) + write(1, &buf[3], i - 3));
 		}
-		else if (!(fl & MIN) && padd == ' ')/* extra char to left of buf */
+		else if (!(fl & MIN) && padd == ' ')
 		{
 			buf[--ind] = 'x';
 			buf[--ind] = '0';
@@ -233,7 +231,7 @@ int wr_pointer(char buf[], int ind, int l,
 				buf[--ind] = plus_c;
 			return (write(1, &buf[3], i - 3) + write(1, &buf[ind], l));
 		}
-		else if (!(fl & MIN) && padd == '0')/* extra char to left of padd */
+		else if (!(fl & MIN) && padd == '0')
 		{
 			if (plus_c)
 				buf[--padd_start] = plus_c;

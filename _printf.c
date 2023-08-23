@@ -3,8 +3,8 @@
 void pr_buf(char buf[], int *buf_i);
 
 /**
- * _printf - Printf function
- * @format: format
+ * _printf - the printf function
+ * @format: the format
  * Return: the printed chars
  */
 int _printf(const char *format, ...)
@@ -24,7 +24,6 @@ int _printf(const char *format, ...)
 			buf[buf_i++] = format[i];
 			if (buf_i == BUF_SIZE)
 				pr_buf(buf, &buf_i);
-			/* write(1, &format[i], 1);*/
 			pr_ch++;
 		}
 		else

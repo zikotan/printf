@@ -1,6 +1,5 @@
 #include "main.h"
 
-/****************** PRINT POINTER ******************/
 /**
  * pr_pointer - it prints the value of a pointer variable
  * @types: the list of arguments
@@ -47,12 +46,10 @@ int pr_pointer(va_list types, char buf[],
 
 	ind++;
 
-	/*return (write(1, &buf[i], BUF_SIZE - i - 1));*/
 	return (wr_pointer(buf, ind, l,
 		wid, fl, padd, plus_c, padd_start));
 }
 
-/************************* PRINT NON PRINTABLE *************************/
 /**
  * pr_unprintable - it prints ascii codes in hexa of non printable chars
  * @types: the list of arguments
@@ -92,7 +89,6 @@ int pr_unprintable(va_list types, char buf[],
 	return (write(1, buf, i + offset));
 }
 
-/************************* PRINT REVERSE *************************/
 /**
  * pr_reverse - it prints reverse string.
  * @types: the list of arguments
@@ -103,7 +99,6 @@ int pr_unprintable(va_list types, char buf[],
  * @size: the size specifier
  * Return: the numbers of chars printed
  */
-
 int pr_reverse(va_list types, char buf[],
 	int fl, int wid, int prec, int size)
 {
@@ -135,15 +130,16 @@ int pr_reverse(va_list types, char buf[],
 	}
 	return (count);
 }
-/************************* PRINT A STRING IN ROT13 *************************/
+
 /**
- * pr_RotStr: it prints a string in rot13.
+ * pr_RotStr: it prints a string in rot13
  * @types: the list of arguments
  * @buf: the buffer array to handle print
  * @fl:  it calculates active flags
  * @wid: the width
  * @prec: the precision specification
  * @size: the size specifier
+ *
  * Return: the numbers of chars printed
  */
 int pr_RotStr(va_list types, char buf[],
